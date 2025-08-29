@@ -1,4 +1,5 @@
 import os
+import time 
 
 def limparTela():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -61,9 +62,14 @@ def cadastrarProprietario():
     listaDeProprietarios.append(novoProprietario)
 
 def listarProprietarios():
+    print("Exibindo lista...")
+    time.sleep(0.5)
     for x in listaDeProprietarios:
         print()
         print(f'Nome : {x.nome} - Chave Pix : {x.chavePix}')
+    input("\nPressione ENTER para voltar ao menu...")
+
+        
 
 def menu():
     print('=' * 40)
@@ -79,7 +85,9 @@ def menu():
     print()
     print('6- Listar Carros.')
     print()
-    entrada = int(input("DIGITE A OPÇÃO: "))
+    entrada = int(input(" "*15 + "DIGITE A OPÇÃO: "))
+    print('=' * 40)
+
     if entrada == 1:
         cadastrarProprietario()
     elif entrada == 2:
